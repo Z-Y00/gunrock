@@ -105,15 +105,15 @@ struct Csr :
      void DumpD(){
         char vertex="vertex.bin";
         char graph="graph.bin";
-        dump_cuda_mem(vertex,row_offsets.GetPointer(),row_offsets.size);
-        dump_cuda_mem(graph,column_indices.GetPointer(),row_offsets.size);
+        dump_cuda_mem(vertex,row_offsets.GetPointer(),row_offsets.GetSize());
+        dump_cuda_mem(graph,column_indices.GetPointer(),row_offsets.GetSize());
      }
      
      void DumpH(){
         char* vertex="vertex.bin";
         char* graph="graph.bin";
-        dump_ram(vertex,(void*)row_offsets.GetPointer(),row_offsets.size);
-        dump_ram(graph,(void*)column_indices.GetPointer(),row_offsets.size);
+        dump_ram(vertex,(void*)row_offsets.GetPointer(),row_offsets.GetSize());
+        dump_ram(graph,(void*)column_indices.GetPointer(),row_offsets.GetSize());
      }
 
 
