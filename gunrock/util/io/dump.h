@@ -4,10 +4,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-//#include <assert.h>
+//#include <assert.h>//seems not working with cpp
 
 
-bool _dump_binary_graph(char* filename,char* graph,size_t size){
+bool _dump_binary_graph(char* filename,void* graph,size_t size){
         FILE *out = fopen(filename, "wb");
         if(graph != NULL)
         {
