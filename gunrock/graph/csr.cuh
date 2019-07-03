@@ -103,8 +103,8 @@ struct Csr :
      * @brief Dump CSR graph in binary format
      */
      void DumpD(){
-        char vertex="vertex.bin";
-        char graph="graph.bin";
+        char* vertex="vertex.bin";
+        char* graph="graph.bin";
         dump_cuda_mem(vertex,row_offsets.GetPointer(),row_offsets.GetSize());
         dump_cuda_mem(graph,column_indices.GetPointer(),row_offsets.GetSize());
      }
