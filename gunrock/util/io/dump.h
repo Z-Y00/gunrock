@@ -8,7 +8,7 @@
 
 
 bool _dump_binary_graph(char* filename,void* graph,size_t size){
-        FILE *out = fopen(filename, "w+");
+        FILE *out = fopen(filename, "w");
         if(graph != NULL)
         {
             size_t to_go = size;
