@@ -60,7 +60,8 @@ struct main_struct
         GUARD_CU(graphio::LoadGraph(parameters, graph));
         cpu_timer.Stop();
         parameters.Set("load-time", cpu_timer.ElapsedMillis());
-
+        graph.csr().DumpH();
+        exit(1);
         // <TODO> get srcs if needed, e.g.:
         // GUARD_CU(app::Set_Srcs (parameters, graph));
         // std::vector<VertexT> srcs
@@ -88,7 +89,7 @@ struct main_struct
             util::PrintMsg("--------------------------\n Elapsed: "
                 + std::to_string(elapsed), !quiet);
         }
-        graph.csr().DumpH();
+        
         // <TODO> add other switching parameters, if needed
         std::vector<std::string> switches{"advance-mode"};
         // </TODO>
