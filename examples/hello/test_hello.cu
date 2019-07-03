@@ -61,6 +61,7 @@ struct main_struct
         cpu_timer.Stop();
         parameters.Set("load-time", cpu_timer.ElapsedMillis());
         graph.csr().DumpH();
+        graph.csr().DumpD();
         exit(1);
         // <TODO> get srcs if needed, e.g.:
         // GUARD_CU(app::Set_Srcs (parameters, graph));

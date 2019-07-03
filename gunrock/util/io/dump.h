@@ -35,6 +35,7 @@ bool dump_cuda_mem(char * name,void* device,size_t size){
 }
 bool dump_ram(char * name,void* hMem,size_t size){
     //assert(hMem);
+    printf("the size %d\n",size);
     bool result=_dump_binary_graph(name,hMem,size);
     return result;
 }
