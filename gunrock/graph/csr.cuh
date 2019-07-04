@@ -23,6 +23,18 @@
 namespace gunrock {
 namespace graph {
 
+    enum : Location
+{
+    LOCATION_NONE = 0x00,
+    //LOCATION_BASE = 0x10,
+    HOST          = 0x01,
+    CPU           = 0x01,
+    DEVICE        = 0x02,
+    GPU           = 0x02,
+    DISK          = 0x04,
+    LOCATION_ALL  = 0x0F,
+    LOCATION_DEFAULT = 0x10,
+};
 /**
  * @brief CSR data structure which uses Compressed Sparse Row
  * format to store a graph. It is a compressed way to present
