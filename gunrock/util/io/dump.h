@@ -22,6 +22,7 @@ bool _dump_binary_graph(char* filename,void* graph,size_t size){
                     break;
                 to_go -= wrote;
             }
+            puts("write finished");
             fclose(out);
             return true;
         }
