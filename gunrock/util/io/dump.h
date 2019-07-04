@@ -15,12 +15,12 @@ bool _dump_binary_graph(char* filename,void* graph,size_t size){
         if(graph != NULL)
         {
             size_t to_go = size;
-            while(to_go > 0)
+            //while(to_go > 0)
             {
                 const size_t wrote = fwrite(graph, to_go, 1, out);
-                if(wrote == 0)
-                    break;
-                to_go -= wrote;
+                //if(wrote == 0)
+                //    break;
+               // to_go -= wrote;//why this is wrong??????
             }
             puts("write finished");
             fclose(out);
