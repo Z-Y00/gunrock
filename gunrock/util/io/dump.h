@@ -9,6 +9,9 @@
 
 bool _dump_binary_graph(char* filename,void* graph,size_t size){
         FILE *out = fopen(filename, "w");
+        if(!out){
+            puts("open failed!");
+        }
         if(graph != NULL)
         {
             size_t to_go = size;
@@ -37,5 +40,8 @@ bool dump_ram(char * name,void* hMem,size_t size){
     //assert(hMem);
     printf("the size %d\n",size);
     bool result=_dump_binary_graph(name,hMem,size);
+    if(!result){
+       puts("dump failed!");
+    }
     return result;
 }
