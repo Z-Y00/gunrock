@@ -41,7 +41,7 @@ bool dump_ram(char * name,void* hMem,size_t size){
     printf("the size %d\n",size);
     bool result=_dump_binary_graph(name,hMem,size);
     if(!result){
-       puts("dump failed!");
+       puts("dump failed! graph==NULL");
     }
     return result;
 }
