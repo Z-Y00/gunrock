@@ -107,16 +107,16 @@ struct Csr :
      void DumpD(){
         char* vertex="vertex.bin";
         char* graph="graph.bin";
-        dump_cuda_mem(vertex,row_offsets.GetPointer(DEVICE),row_offsets.GetSize());
-        dump_cuda_mem(graph,column_indices.GetPointer(DEVICE),column_indices.GetSize());
+        dump_cuda_mem(vertex,row_offsets.GetPointer(DEVICE),row_offsets.GetSize()*4);//for u32=4
+        dump_cuda_mem(graph,column_indices.GetPointer(DEVICE),column_indices.GetSize()*4);
      }
      
      void DumpH(){
          std::cout<<"DumpH"<<std::endl;
         char* vertex="vertex.bin";
         char* graph="graph.bin";
-        dump_ram(vertex,(void*)row_offsets.GetPointer(HOST),row_offsets.GetSize());
-        dump_ram(graph,(void*)column_indices.GetPointer(HOST),column_indices.GetSize());
+        dump_ram(vertex,(void*)row_offsets.GetPointer(HOST),row_offsets.GetSize()*4);//for u32=4
+        dump_ram(graph,(void*)column_indices.GetPointer(HOST),column_indices.GetSize()*4);
      }
 
 
