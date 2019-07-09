@@ -19,7 +19,7 @@
 
 #include <gunrock/app/rw/rw_enactor.cuh>
 #include <gunrock/app/rw/rw_test.cuh>
-
+#include <cuda.h>
 namespace gunrock {
 namespace app {
 namespace rw {
@@ -146,6 +146,7 @@ cudaError_t RunTests(
 
         cpu_timer.Start();
         GUARD_CU(enactor.Enact());
+        cudaDeviceSynchronize();
         cpu_timer.Stop();
         info.CollectSingleRun(cpu_timer.ElapsedMillis());
 
