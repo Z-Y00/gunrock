@@ -150,7 +150,7 @@ cudaError_t RunTests(
         cpu_timer.Stop();
         info.CollectSingleRun(cpu_timer.ElapsedMillis());
 
-        util::PrintMsg("--------------------------\nRun "
+        util::PrintMsg("--------------------------\nRun with sync"
             + std::to_string(run_num) + " elapsed: "
             + std::to_string(cpu_timer.ElapsedMillis()) +
             ", #iterations = "
